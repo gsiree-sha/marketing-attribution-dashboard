@@ -1,4 +1,3 @@
--- campaign_spend (10 days sample)
 INSERT INTO campaign_spend (date, channel, campaign, spend, impressions, clicks) VALUES
 ('2026-01-01','Paid Search','Brand_Search_US',1200, 180000, 5400),
 ('2026-01-01','Social','Meta_Prospecting',900,  250000, 2800),
@@ -18,7 +17,6 @@ INSERT INTO campaign_spend (date, channel, campaign, spend, impressions, clicks)
 ('2026-01-03','Display','DV360_Prospecting',900, 520000, 1900),
 ('2026-01-03','Organic','SEO_Blog',0,    95000,  2400);
 
--- web_events (multi-touch journeys)
 INSERT INTO web_events (user_id, session_id, timestamp, event_type, source_medium) VALUES
 ('u1','s1','2026-01-01 14:00:00+00','visit','display / cpm'),
 ('u1','s1','2026-01-01 14:05:00+00','add_to_cart','display / cpm'),
@@ -40,7 +38,6 @@ INSERT INTO web_events (user_id, session_id, timestamp, event_type, source_mediu
 ('u5','s8','2026-01-03 22:00:00+00','visit','organic / search'),
 ('u5','s8','2026-01-03 22:08:00+00','add_to_cart','organic / search');
 
--- conversions (orders)
 INSERT INTO conversions (user_id, conversion_time, order_id, revenue) VALUES
 ('u1','2026-01-02 16:25:00+00','o1001',180.50),
 ('u2','2026-01-03 13:15:00+00','o1002',95.00);
