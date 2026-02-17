@@ -1,0 +1,9 @@
+date,channel,visits,add_to_cart,purchases
+2026-01-01,Display,1,1,0
+2026-01-01,Social,2,0,0
+2026-01-02,Display,2,0,0
+2026-01-02,Organic,1,0,0
+2026-01-02,Paid Search,1,0,1
+2026-01-03,Email,1,1,1
+2026-01-03,Organic,1,1,0
+2026-01-03,Paid Search,1,0,0
