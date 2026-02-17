@@ -1,9 +1,7 @@
--- Drop for clean reruns (optional)
 DROP TABLE IF EXISTS conversions;
 DROP TABLE IF EXISTS web_events;
 DROP TABLE IF EXISTS campaign_spend;
 
--- 1) campaign_spend: daily spend by channel + campaign
 CREATE TABLE campaign_spend (
   date         DATE NOT NULL,
   channel      TEXT NOT NULL CHECK (channel IN ('Paid Search','Social','Email','Display','Organic')),
@@ -14,7 +12,6 @@ CREATE TABLE campaign_spend (
   PRIMARY KEY (date, channel, campaign)
 );
 
--- 2) web_events: clickstream / session events
 CREATE TABLE web_events (
   user_id       TEXT NOT NULL,
   session_id    TEXT NOT NULL,
@@ -24,7 +21,6 @@ CREATE TABLE web_events (
   PRIMARY KEY (session_id, timestamp, event_type)
 );
 
--- 3) conversions: order outcomes (single row per order)
 CREATE TABLE conversions (
   user_id         TEXT NOT NULL,
   conversion_time TIMESTAMPTZ NOT NULL,
@@ -32,7 +28,6 @@ CREATE TABLE conversions (
   revenue         NUMERIC(12,2) NOT NULL CHECK (revenue >= 0)
 );
 
--- Helpful indexes
 CREATE INDEX idx_web_events_user_time ON web_events(user_id, timestamp);
 CREATE INDEX idx_web_events_source ON web_events(source_medium);
 CREATE INDEX idx_conversions_user_time ON conversions(user_id, conversion_time);
